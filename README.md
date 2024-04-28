@@ -1,6 +1,7 @@
 # hookdetection-bof
-BOF of https://github.com/MrEmpy/APIHookingDetector
+Original Program made by MrEmpty - https://github.com/MrEmpy/APIHookingDetector
   - Removed Output File
+  - CS Ready
 
 Example Output 
 ```
