@@ -1,0 +1,19 @@
+beacon_command_register(
+	"hookdetector", "Take Screenshot.",
+	"INFO:\nDetect hooked function from NtAPI.\n\n" .
+	"USAGE:\nhookdetector\n\n");
+	
+alias hookdetector {
+    $bid = $1;
+
+    # Read in the right BOF file
+    $handle = openf(script_resource("hookdetector.o"));
+    $data   = readb($handle, -1);
+    closef($handle);
+
+	$arg_data  = bof_pack($bid);
+
+	blog($bid, "Detecting Hooked Native Windows API's...");
+    beacon_inline_execute($bid, $data, "go", $arg_data);
+
+}
